@@ -1,0 +1,38 @@
+
+body {
+  background-color: #f3f3f4;
+}
+
+header {
+  background: url(../images/to-do-hero-image.jpg) center / cover;
+  height: 40vh;
+  justify-content:center;
+  text-align: center;
+}
+
+h1 {
+  font-family:serif;
+  font-weight: bold;
+}
+
+.newToDoText {
+  font-style: serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.toDoForm {
+  padding-top: 40px;
+  padding-left: 16px;
+  color:#303aa7;
+  text-align: left;
+}
+
+.toDoList {
+  text-align: left;
+  font-style: serif;
+  font-size: 20px;
+  color:#303aa7;
+  padding-right: 10px;
+  list-style-type: none;
+}
