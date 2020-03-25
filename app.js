@@ -1,7 +1,9 @@
 
 
 function onReady() {
+  const storage = JSON.parse(localStorage.getItem('toDos'))
   let toDos = [];
+  storage ? toDos.push(...storage) : null
   const addToDoForm = document.getElementById('addToDoForm');
 
   function createNewToDo() {
@@ -27,6 +29,18 @@ function onReady() {
       const newLi = document.createElement('li');
       const checkbox = document.createElement('input');
       checkbox.type = "checkbox";
+      toDo.complete ? checkbox.checked = true : checkbox.checked = false
+
+      checkbox.addEventListener('change', function() {
+        if (this.checked) {
+          console.log(toDo)
+          toDo['complete'] = true;
+        } else {
+          console.log(toDo)
+          toDo['complete'] = false;
+        }
+        localStorage.setItem('toDos', JSON.stringify(toDos))
+      })
 
       newLi.textContent = toDo.title;
 
@@ -34,6 +48,7 @@ function onReady() {
       newLi.appendChild(checkbox);
     });
 
+    localStorage.setItem('toDos', JSON.stringify(toDos))
   }
 
   addToDoForm.addEventListener('submit', event => {
